@@ -17,7 +17,7 @@ RUN install2.r --error --skipinstalled -n -1 \
 COPY src /home/shiny-app
 
 # Expose the application port
-EXPOSE 8080
+EXPOSE 8180
 
 # Run shiny::runApp() when the container launches
 CMD ["R", "-e", "shiny::runApp('/home/shiny-app')"]

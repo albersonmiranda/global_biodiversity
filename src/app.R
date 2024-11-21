@@ -6,7 +6,7 @@ source("R/ui.R")
 source("R/server.R")
 
 # Specify the application port
-port <- as.numeric(Sys.getenv("PORT", "8180"))
+port <- as.numeric(Sys.getenv("PORT", "8080"))
 options(shiny.host = "0.0.0.0")
 options(shiny.port = port)
 

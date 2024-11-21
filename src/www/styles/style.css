@@ -134,7 +134,7 @@
   background-image: url('https://www.polandtraveltours.com/wp-content/uploads/2022/01/niedzwiedz_blog.jpg');
 }
 
-.button-about::before {
+.button-timeline::before {
   background-image: url('https://careersinpoland.com/media/file/moose.jpg');
 }
 
@@ -161,7 +161,7 @@ li a {
   display: flex;
 }
 
-#about > li > a {
+#timeline > li > a {
   color: #004b8d;
   display: flex;
 }

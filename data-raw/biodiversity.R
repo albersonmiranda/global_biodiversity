@@ -75,7 +75,7 @@ duckdb::duckdb_read_csv(
 )
 
 # leave just Europe
-DBI::dbExecute(con, "DELETE FROM occurence WHERE countryCode NOT IN ('PL', 'BR');")
+DBI::dbExecute(con, "DELETE FROM occurence WHERE continent NOT IN ('Europe');")
 
 # compacting db
 DBI::dbExecute(con, "

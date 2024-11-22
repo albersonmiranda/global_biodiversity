@@ -1,0 +1,65 @@
+{
+  "input": {
+    "home-go_to_dataset": 0,
+    "home-go_to_maps": 1,
+    "home-go_to_timeline": 0,
+    "maps-filter_pictures": false,
+    "maps-map_click": [
+      53.054421865461,
+      22.39013671875,
+      0.470078964050391
+    ],
+    "maps-map_combined_name_open": false,
+    "maps-map_country_code": null,
+    "maps-map_country_code_open": false,
+    "maps-map_marker_mouseout": [
+      0.876084479770005,
+      53.15,
+      22.35
+    ],
+    "maps-map_marker_mouseover": [
+      0.6894686234862391,
+      53.15,
+      22.35
+    ],
+    "sidebarCollapsed": false,
+    "sidebarItemExpanded": null,
+    "tabs": "maps"
+  },
+  "output": {
+    "maps-map_country_code": {
+      "html": "<div class=\"form-group shiny-input-container\">\n  <label class=\"control-label\" id=\"maps-map_country_code-label\" for=\"maps-map_country_code\">Country Code<\/label>\n  <select data-live-search=\"true\" data-live-search-placeholder=\"Search\" data-none-selected-text=\"Select Country\" data-tick-icon=\"\" data-virtual-scroll=\"10\" data-size=\"6\" data-state-input=\"true\" id=\"maps-map_country_code\" class=\"selectpicker form-control\" autocomplete=\"off\" multiple=\"multiple\"><option value=\"Albania\">Albania<\/option>\n<option value=\"Andorra\">Andorra<\/option>\n<option value=\"Austria\">Austria<\/option>\n<option value=\"Belarus\">Belarus<\/option>\n<option value=\"Belgium\">Belgium<\/option>\n<option value=\"Bosnia and Herzegovina\">Bosnia and Herzegovina<\/option>\n<option value=\"Bulgaria\">Bulgaria<\/option>\n<option value=\"Croatia\">Croatia<\/option>\n<option value=\"Cyprus\">Cyprus<\/option>\n<option value=\"Czech Republic\">Czech Republic<\/option>\n<option value=\"Denmark\">Denmark<\/option>\n<option value=\"Estonia\">Estonia<\/option>\n<option value=\"Faroe Islands\">Faroe Islands<\/option>\n<option value=\"Finland\">Finland<\/option>\n<option value=\"France\">France<\/option>\n<option value=\"Georgia\">Georgia<\/option>\n<option value=\"Germany\">Germany<\/option>\n<option value=\"Gibraltar\">Gibraltar<\/option>\n<option value=\"Greece\">Greece<\/option>\n<option value=\"Guernsey\">Guernsey<\/option>\n<option value=\"Hungary\">Hungary<\/option>\n<option value=\"Iceland\">Iceland<\/option>\n<option value=\"Ireland\">Ireland<\/option>\n<option value=\"Italy\">Italy<\/option>\n<option value=\"Jan Mayen\">Jan Mayen<\/option>\n<option value=\"Jersey\">Jersey<\/option>\n<option value=\"Kosovo\">Kosovo<\/option>\n<option value=\"Latvia\">Latvia<\/option>\n<option value=\"Liechtenstein\">Liechtenstein<\/option>\n<option value=\"Lithuania\">Lithuania<\/option>\n<option value=\"Luxembourg\">Luxembourg<\/option>\n<option value=\"Macedonia\">Macedonia<\/option>\n<option value=\"Malta\">Malta<\/option>\n<option value=\"Moldova\">Moldova<\/option>\n<option value=\"Monaco\">Monaco<\/option>\n<option value=\"Montenegro\">Montenegro<\/option>\n<option value=\"Netherlands\">Netherlands<\/option>\n<option value=\"Norway\">Norway<\/option>\n<option value=\"Oceans\">Oceans<\/option>\n<option value=\"Poland\">Poland<\/option>\n<option value=\"Portugal\">Portugal<\/option>\n<option value=\"Romania\">Romania<\/option>\n<option value=\"San Marino\">San Marino<\/option>\n<option value=\"Serbia\">Serbia<\/option>\n<option value=\"Slovakia\">Slovakia<\/option>\n<option value=\"Slovenia\">Slovenia<\/option>\n<option value=\"Spain\">Spain<\/option>\n<option value=\"Sweden\">Sweden<\/option>\n<option value=\"Switzerland\">Switzerland<\/option>\n<option value=\"The Netherlands\">The Netherlands<\/option>\n<option value=\"Ukraine\">Ukraine<\/option>\n<option value=\"United Kingdom\">United Kingdom<\/option><\/select>\n<\/div>",
+      "deps": [
+        {
+          "name": "shinyWidgets",
+          "version": "0.8.7",
+          "src": {
+            "href": "shinyWidgets"
+          },
+          "meta": null,
+          "script": "shinyWidgets-bindings.min.js",
+          "stylesheet": "shinyWidgets.min.css",
+          "head": null,
+          "attachment": null,
+          "all_files": false
+        },
+        {
+          "name": "bootstrap-select",
+          "version": "1.13.8",
+          "src": {
+            "href": "shinyWidgets/bootstrap-select"
+          },
+          "meta": null,
+          "script": "js/bootstrap-select.min.js",
+          "stylesheet": "css/bootstrap-select.min.css",
+          "head": null,
+          "attachment": null,
+          "all_files": true
+        }
+      ]
+    }
+  },
+  "export": {
+
+  }
+}

@@ -72,6 +72,8 @@ app_about_ui <- function(id) {
           tags$p("I'm not experienced in debugging shiny apps, so I've depended a lot on the console. That was my first time using unit tests for a shiny app. I've used {testthat} before, but only for R packages. The tests consisted on navigating through the app and recording snapshots with {shinytest2}."),
           tags$p("Finally, for deploying I used Google Cloud Run. I'm currently going through Google's Professional Cloud Security Engineer certification, so I'm familiar with the platform. I'm experienced in containerization and I've used Docker before, so it was a smooth process. I'd usually integrate the deployment process with the Github repository and use a CI/CD pipeline, but the db size was a problem. Using git-lfs would require a few changes in the Dockerfile and I didn't want to risk it."),
           tags$p("That's it! I hope you enjoy the app and I'm looking forward to your feedback! I've learned a lot in this process and I'm cerain that all of this will be useful in my future projects."),
+          tags$h3("Thanks"),
+          tags$p("Special thanks to my fiancee for testing the app. Before asking her help I thought it was complete (it wasn't)."),
           tags$h3("Author"),
           tags$p("Alberson Miranda")
         )

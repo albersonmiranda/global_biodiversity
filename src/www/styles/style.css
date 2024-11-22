@@ -1,10 +1,49 @@
 /* Where the magic happens */
 
 
-/* fonts */
-@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
-
 /* logo */
+.logo {
+  width: 30px;
+}
+
+.projects-container {
+  -webkit-box-pack: left;
+  -ms-flex-pack: left;
+  justify-content: left;
+  -webkit-box-pack: left;
+  -ms-flex-pack: left;
+  justify-content: left;
+  display: flex;
+  gap: 10px;
+}
+
+.project-card {
+  -webkit-box-flex: 0;
+  -ms-flex: 0 1 auto;
+  flex: 0 1 auto;
+  width: 25%;
+  margin: 7.5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.project-card-image-area {
+  text-align: center;
+  position: relative;
+  box-sizing: border-box;
+}
+
+.project-image {
+  height: 200px;
+  width: 100%;
+  object-fit: cover;
+}
+
+.project-card-strip h4 {
+  padding: 30px;
+  color: #333;
+}
+
 .skin-blue .main-header .logo {
   background-color: #004b8d;
   font-weight: normal;
@@ -185,4 +224,18 @@ li a {
 
  .button:hover .button-text {
   color: #fff;
+}
+
+ul.checklist {
+  list-style: none;
+  padding-left: 3em;
+}
+
+ul.checklist li::before {
+  content: "\2713";
+  color: #56af31;
+  font-weight: bold;
+  display: inline-block;
+  width: 1em;
+  margin-left: -1em;
 }

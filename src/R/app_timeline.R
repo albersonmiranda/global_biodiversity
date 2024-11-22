@@ -33,7 +33,7 @@ app_timeline_server <- function(id, con) {
       shinyWidgets::pickerInput(
         inputId = ns("timeline_country_code"),
         label = "Country",
-        choices = timeline_country_codes,
+        choices = sort(timeline_country_codes),
         multiple = TRUE,
         options = list(
           `actions-box` = TRUE,
@@ -61,7 +61,7 @@ app_timeline_server <- function(id, con) {
         shinyWidgets::pickerInput(
           inputId = ns("timeline_combined_name"),
           label = "Scientific or Vernacular Name",
-          choices = combined_names,
+          choices = sort(combined_names),
           multiple = TRUE,
           options = list(
             `live-search` = TRUE,

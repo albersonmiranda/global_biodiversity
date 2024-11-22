@@ -33,7 +33,7 @@ app_dataset_server <- function(id, con) {
       shinyWidgets::pickerInput(
         inputId = ns("country_code"),
         label = "Country",
-        choices = country_codes,
+        choices = sort(country_codes),
         multiple = TRUE,
         options = list(
           `actions-box` = TRUE,
@@ -60,7 +60,7 @@ app_dataset_server <- function(id, con) {
         shinyWidgets::pickerInput(
           inputId = ns("combined_name"),
           label = "Scientific or Vernacular Name",
-          choices = combined_names,
+          choices = sort(combined_names),
           multiple = TRUE,
           options = list(
             `live-search` = TRUE,

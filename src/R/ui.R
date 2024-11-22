@@ -5,6 +5,7 @@ source("R/app_home.R")
 source("R/app_dataset.R")
 source("R/app_map.R")
 source("R/app_timeline.R")
+source("R/app_about.R")
 
 # UI
 app_ui <- dashboardPage(
@@ -46,7 +47,7 @@ app_ui <- dashboardPage(
       tabItem(tabName = "dataset", app_dataset_ui("dataset")),
       tabItem(tabName = "maps", app_map_ui("maps")),
       tabItem(tabName = "timeline", app_timeline_ui("timeline")),
-      tabItem(tabName = "about", "Explore GBIF data with plots")
+      tabItem(tabName = "about", app_about_ui("about"))
     )
   )
 )

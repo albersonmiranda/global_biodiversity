@@ -5,12 +5,13 @@ app_timeline_ui <- function(id) {
   ns <- NS(id)
   fluidPage(
     titlePanel("Species Observation Timeline"),
+    tags$h4("Please select a country and a scientific or vernacular name to view the timeline"),
     fluidRow(
       column(12, uiOutput(ns("timeline_country_code"))),
       column(12, uiOutput(ns("timeline_combined_name")))
     ),
     fluidRow(
-      column(12, withSpinner(plotlyOutput(ns("timeline_plot"))))
+      column(12, withSpinner(plotlyOutput(ns("timeline_plot")), caption = "Awaiting country and species selection"))
     )
   )
 }
@@ -20,14 +21,6 @@ app_timeline_server <- function(id, con) {
     ns <- session$ns
 
     output$timeline_country_code <- renderUI({
-      showModal(
-        modalDialog(
-          title = "Welcome to the GBIF Timeline Viewer",
-          "Please select a country and a scientific or vernacular name to view the observations timeline.",
-          easyClose = TRUE,
-          footer = NULL
-        )
-      )
       query <- "SELECT DISTINCT country FROM occurence"
       timeline_country_codes <- dbGetQuery(con, query)$country
       shinyWidgets::pickerInput(

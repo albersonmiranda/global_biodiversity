@@ -4,13 +4,14 @@ app_map_ui <- function(id) {
   ns <- NS(id)
   fluidPage(
     titlePanel("Biodiversity Map"),
+    tags$h4("Please select a country and a scientific or vernacular name to view the map"),
     fluidRow(
       column(12, uiOutput(ns("map_country_code"))),
       column(12, uiOutput(ns("map_combined_name"))),
       column(12, checkboxInput(ns("filter_pictures"), "Show only observations with pictures", FALSE))
     ),
     fluidRow(
-      column(12, withSpinner(leafletOutput(ns("map"))))
+      column(12, withSpinner(leafletOutput(ns("map")), caption = "Awaiting country and species selection"))
     )
   )
 }
@@ -20,14 +21,6 @@ app_map_server <- function(id, con) {
     ns <- session$ns
 
     output$map_country_code <- renderUI({
-      showModal(
-        modalDialog(
-          title = "Welcome to the Biodiversity Map",
-          "Please select a country and a scientific or vernacular name to view the map.",
-          easyClose = TRUE,
-          footer = NULL
-        )
-      )
       query <- "SELECT DISTINCT country FROM occurence"
       country_codes <- dbGetQuery(con, query)$country
       shinyWidgets::pickerInput(
@@ -61,7 +54,9 @@ app_map_server <- function(id, con) {
           label = "Scientific or Vernacular Name",
           choices = sort(combined_names),
           multiple = TRUE,
+          selected = "Canis lupus",
           options = list(
+            `actions-box` = TRUE,
             `live-search` = TRUE,
             `live-search-placeholder` = "Search",
             `none-selected-text` = "Select species or vernacular name",

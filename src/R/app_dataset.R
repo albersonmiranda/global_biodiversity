@@ -5,12 +5,13 @@ app_dataset_ui <- function(id) {
   ns <- NS(id)
   fluidPage(
     titlePanel("Biodiversity Data"),
+    tags$h4("Please select a country and a scientific or vernacular name to view the map"),
     fluidRow(
       column(12, uiOutput(ns("country_code"))),
       column(12, uiOutput(ns("combined_name")))
     ),
     fluidRow(
-      column(12, withSpinner(DTOutput(ns("dataTable"))))
+      column(12, withSpinner(DTOutput(ns("dataTable")), caption = "Awaiting country and species selection"))
     )
   )
 }
@@ -20,14 +21,6 @@ app_dataset_server <- function(id, con) {
     ns <- session$ns
 
     output$country_code <- renderUI({
-      showModal(
-        modalDialog(
-          title = "Welcome to the GBIF Dataset Viewer",
-          "Please select a country and a scientific or vernacular name to view the map.",
-          easyClose = TRUE,
-          footer = NULL
-        )
-      )
       query <- "SELECT DISTINCT country FROM occurence"
       country_codes <- dbGetQuery(con, query)$country
       shinyWidgets::pickerInput(

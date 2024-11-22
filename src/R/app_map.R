@@ -6,7 +6,8 @@ app_map_ui <- function(id) {
     titlePanel("Biodiversity Map"),
     fluidRow(
       column(12, uiOutput(ns("map_country_code"))),
-      column(12, uiOutput(ns("map_combined_name")))
+      column(12, uiOutput(ns("map_combined_name"))),
+      column(12, checkboxInput(ns("filter_pictures"), "Show only observations with pictures", FALSE))
     ),
     fluidRow(
       column(12, withSpinner(leafletOutput(ns("map"))))
@@ -32,10 +33,9 @@ app_map_server <- function(id, con) {
       shinyWidgets::pickerInput(
         inputId = ns("map_country_code"),
         label = "Country Code",
-        choices = country_codes,
+        choices = sort(country_codes),
         multiple = TRUE,
         options = list(
-          `actions-box` = TRUE,
           `live-search` = TRUE,
           `live-search-placeholder` = "Search",
           `none-selected-text` = "Select Country",
@@ -59,7 +59,7 @@ app_map_server <- function(id, con) {
         shinyWidgets::pickerInput(
           inputId = ns("map_combined_name"),
           label = "Scientific or Vernacular Name",
-          choices = combined_names,
+          choices = sort(combined_names),
           multiple = TRUE,
           options = list(
             `live-search` = TRUE,
@@ -75,7 +75,9 @@ app_map_server <- function(id, con) {
 
     observeEvent(input$map_combined_name, {
       output$map <- renderLeaflet({
-        query <- "SELECT * FROM occurence"
+        query <- "
+          SELECT *
+            FROM occurence LEFT JOIN multimedia ON occurence.id = multimedia.id"
         conditions <- list()
 
         if (!is.null(input$map_country_code)) {
@@ -89,6 +91,11 @@ app_map_server <- function(id, con) {
             "vernacularName IN ('", paste(input$map_combined_name, collapse = "','"), "'))"
           )
           conditions <- c(conditions, name_conditions)
+        }
+
+        if (input$filter_pictures) {
+          picture_condition <- "multimedia.references IS NOT NULL"
+          conditions <- c(conditions, picture_condition)
         }
 
         if (length(conditions) > 0) {
@@ -106,7 +113,10 @@ app_map_server <- function(id, con) {
           addCircleMarkers(
             lng = ~longitudeDecimal,
             lat = ~latitudeDecimal,
-            popup = ~scientificName,
+            popup = ~ ifelse(is.na(references) | references == "",
+              paste0("<b>", scientificName, "</b><br>No picture available"),
+              paste0("<b>", scientificName, "</b><br><img src='", references, "' width='100' height='100'>")
+            ),
             color = ~ pal(scientificName),
             radius = 5
           )

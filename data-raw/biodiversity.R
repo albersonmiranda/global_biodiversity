@@ -77,6 +77,34 @@ duckdb::duckdb_read_csv(
 # leave just Europe
 DBI::dbExecute(con, "DELETE FROM occurence WHERE continent NOT IN ('Europe');")
 
+# drop unused columns by copying the table
+DBI::dbExecute(con, "
+  CREATE TABLE occurence2 AS
+  SELECT
+    id
+    , scientificName
+    , vernacularName
+    , country
+    , latitudeDecimal
+    , longitudeDecimal
+    , eventDate
+  FROM occurence;
+  
+  DROP TABLE occurence;
+  
+  ALTER TABLE occurence2 RENAME TO occurence;
+
+  CREATE TABLE multimedia2 AS
+  SELECT
+    id
+    , multimedia.references AS references
+  FROM multimedia;
+
+  DROP TABLE multimedia;
+
+  ALTER TABLE multimedia2 RENAME TO multimedia;
+")
+
 # compacting db
 DBI::dbExecute(con, "
   ATTACH 'src/data/db.duckdb' AS db1;

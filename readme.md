@@ -1,7 +1,7 @@
 # Appsilon Home Assignment
 
 ## A brief description of the project and my process
-This is my approach for the 2nd recruitment stage for Appsilon. This project provides an interactive platform to explore biodiversity data from the GBIF. Users can view datasets, maps, and timelines of species observations.
+This is my approach for the 2nd recruitment stage for Appsilon. This project provides [an interactive platform to explore biodiversity data from the GBIF](https://globalbiodiversity-542496339289.southamerica-east1.run.app). Users can view datasets, maps, and timelines of species observations.
 
 ## Business Requirements
 

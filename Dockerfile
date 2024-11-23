@@ -10,11 +10,10 @@ RUN apt-get update && apt-get install -y \
     libssl-dev \
     libxml2-dev \
     libgdal-dev \
-    libproj-dev \
     xz-utils
 
 # Install R dependencies
-RUN install2.r --error --skipinstalled -n -1 \
+RUN install2.r --error --skipinstalled \
         shinydashboard \
         shinycssloaders \
         shinyWidgets \

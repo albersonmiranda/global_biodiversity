@@ -8,7 +8,10 @@ RUN mkdir /home/shiny-app
 RUN apt-get update && apt-get install -y \
     libcurl4-openssl-dev \
     libssl-dev \
-    libxml2-dev
+    libxml2-dev \
+    libgdal-dev \
+    libproj-dev \
+    xz-utils
 
 # Install R dependencies
 RUN install2.r --error --skipinstalled -n -1 \
@@ -17,6 +20,8 @@ RUN install2.r --error --skipinstalled -n -1 \
         shinyWidgets \
         duckdb \
         DT \
+        leaflet \
+        plotly \
     && rm -rf /tmp/downloaded_packages
 
 # Copy the src folder to the container

@@ -53,14 +53,10 @@ jobs:
           sudo apt update
           sudo apt install -y libcurl4-openssl-dev libssl-dev libxml2-dev libgdal-dev xz-utils
 
-      - name: Install PhantomJS (if required)
-        run: |
-          install.packages("shinytest")
-          if (!shinytest::dependenciesInstalled()) shinytest::installDependencies()
-        shell: Rscript {0}
-
       - name: Run tests
-        run: shiny::runTests("src", assert = TRUE)
+        run: |
+          install.packages("shinytest2")
+          shiny::runTests("src", assert = TRUE)
         shell: Rscript {0}
 
       - name: Upload test results

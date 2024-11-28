@@ -55,6 +55,7 @@ jobs:
 
       - name: Install PhantomJS (if required)
         run: |
+          install.packages("shinytest")
           if (!shinytest::dependenciesInstalled()) shinytest::installDependencies()
         shell: Rscript {0}
 

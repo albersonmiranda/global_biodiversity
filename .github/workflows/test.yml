@@ -53,12 +53,6 @@ jobs:
           sudo apt update
           sudo apt install -y libcurl4-openssl-dev libssl-dev libxml2-dev libgdal-dev xz-utils
 
-      - name: Install R dependencies
-        run: |
-          install.packages("remotes")
-          remotes::install_deps(dependencies = TRUE)
-        shell: Rscript {0}
-
       - name: Install PhantomJS (if required)
         run: |
           if (!shinytest::dependenciesInstalled()) shinytest::installDependencies()

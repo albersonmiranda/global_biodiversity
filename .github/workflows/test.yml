@@ -55,7 +55,7 @@ jobs:
 
       - name: Run tests
         run: |
-          install.packages("shinytest2")
+          install.packages(c("shinytest2", "DT", "shinydashboard", "shinyjs", "shinyWidgets", "shinycssloaders", "duckdb", "leaflet", "plotly"))
           shiny::runTests("src", assert = TRUE)
         shell: Rscript {0}
 

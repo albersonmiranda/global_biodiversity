@@ -27,6 +27,16 @@
   overflow: hidden;
 }
 
+/* adjust cards for mobile */
+@media (max-width:1000px) {
+  .projects-container {
+    flex-direction: column;
+  }
+  .project-card {
+    width: 100%;
+  }
+}
+
 .project-card-image-area {
   text-align: center;
   position: relative;

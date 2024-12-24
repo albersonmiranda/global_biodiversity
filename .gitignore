@@ -1,3 +1,4 @@
 .DS_Store
 data-raw/biodiversity-data
 data-raw/biodiversity-data.tar.gz
+src/rsconnect/

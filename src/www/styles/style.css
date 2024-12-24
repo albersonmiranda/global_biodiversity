@@ -27,6 +27,19 @@
   overflow: hidden;
 }
 
+/* Adjust for mobile */
+@media (max-width: 768px) {
+  .projects-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .project-card {
+    width: 100%;
+  }
+}
+
 .project-card-image-area {
   text-align: center;
   position: relative;

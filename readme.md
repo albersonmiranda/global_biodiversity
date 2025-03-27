@@ -1,7 +1,7 @@
 # X Company Home Assignment
 
 ## A brief description of the project and my process
-This is my approach for the 2nd recruitment stage for X Company. This project provides [an interactive platform to explore biodiversity data from the GBIF](https://globalbiodiversity-542496339289.southamerica-east1.run.app). Users can view datasets, maps, and timelines of species observations.
+This is my approach for the 2nd recruitment stage for X Company. This project provides [an interactive platform to explore biodiversity data from the GBIF](https://albersonmiranda.shinyapps.io/Global_Biodiversity/). Users can view datasets, maps, and timelines of species observations.
 
 ## My Process
 I started by exploring the data and understanding its structure. From the very beginning, I was interested in displaying images of the species, as I was curious about what those names looked like. So, I spent my first minutes identifying foreign keys and testing whether the images were available and matched the descriptions (I checked with *Canis lupus* and ladybugs!).
